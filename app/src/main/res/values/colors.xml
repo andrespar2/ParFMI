@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Paleta Black Modern AMOLED Red de ParFMI. -->
+<resources>
+    <!-- Fondos -->
+    <color name="amoled_black">#FF000000</color>
+    <color name="surface_dark">#FF101010</color>
+    <color name="surface_dark_alt">#FF161616</color>
+
+    <!-- Color principal -->
+    <color name="parfmi_red">#FFFF1744</color>
+    <color name="parfmi_red_dark">#FFB80E2E</color>
+
+    <!-- Texto -->
+    <color name="text_primary">#FFFFFFFF</color>
+    <color name="text_secondary">#FF9E9E9E</color>
+
+    <!-- Estados semanticos -->
+    <color name="status_on">#FFFF1744</color>
+    <color name="status_off">#FF00E676</color>
+    <color name="status_unknown">#FFFFB300</color>
+    <color name="info">#FF40C4FF</color>
+</resources>
