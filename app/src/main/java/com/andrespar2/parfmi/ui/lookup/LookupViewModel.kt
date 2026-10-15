@@ -10,6 +10,7 @@ import com.andrespar2.parfmi.data.LookupFmiUseCase
 import com.andrespar2.parfmi.data.model.ServiceCatalogResult
 import com.andrespar2.parfmi.data.settings.AppSettings
 import com.andrespar2.parfmi.data.settings.SettingsRepository
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -38,6 +39,8 @@ class LookupViewModel(
     val status: StateFlow<LookupStatus> = _status.asStateFlow()
 
     val settings: StateFlow<AppSettings> = settingsRepository.settings
+
+    private var lookupJob: Job? = null
 
     /** Tipo de identificador detectado en vivo, o `null` si aun no es valido. */
     fun detectedType(): IdentifierType? =
@@ -77,7 +80,8 @@ class LookupViewModel(
                 val serviceLabel = check.request.serviceName ?: check.request.serviceId
                 _status.value = LookupStatus.Loading(serviceLabel)
                 onNavigateToResult()
-                viewModelScope.launch {
+                lookupJob?.cancel()
+                lookupJob = viewModelScope.launch {
                     _status.value = LookupStatus.Done(lookupFmi.execute(_input.value))
                 }
             }
@@ -86,6 +90,8 @@ class LookupViewModel(
 
     /** Vuelve al formulario limpiando el resultado anterior. */
     fun resetResult() {
+        lookupJob?.cancel()
+        lookupJob = null
         _status.value = LookupStatus.Idle
     }
 
