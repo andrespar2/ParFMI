@@ -109,6 +109,7 @@
     <string name="field_fmi">Estado FMI</string>
     <string name="field_activation_lock">Activation Lock</string>
     <string name="field_activation_state">Estado de activacion</string>
+    <string name="field_icloud">Estado de iCloud</string>
     <string name="field_coverage">Cobertura</string>
     <string name="field_activation_date">Fecha de compra o activacion</string>
     <string name="field_carrier">Operador</string>
