@@ -86,6 +86,15 @@
     <string name="status_not_activated">No activado</string>
     <string name="status_clean">Sin bloqueo</string>
     <string name="status_blacklisted">En lista de bloqueo</string>
+    <string name="status_mdm_enrolled">Inscrito en MDM</string>
+    <string name="status_mdm_clean">Sin MDM</string>
+    <string name="status_sim_locked">Bloqueado a operador</string>
+    <string name="status_sim_unlocked">Libre de operador</string>
+    <string name="status_icloud_clean">Sin incidencias</string>
+    <string name="status_icloud_lost">En modo perdido</string>
+    <string name="status_icloud_erased">Borrado</string>
+    <string name="status_coverage_in">En garantia</string>
+    <string name="status_coverage_out">Fuera de garantia</string>
 
     <!-- Campos -->
     <string name="field_imei">IMEI</string>
