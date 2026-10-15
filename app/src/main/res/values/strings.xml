@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ParFMI</string>
+    <string name="app_tagline">Consulta el estado FMI de dispositivos Apple</string>
+
+    <!-- Navegacion -->
+    <string name="nav_home">Consulta</string>
+    <string name="nav_settings">Ajustes</string>
+    <string name="nav_about">Acerca de</string>
+    <string name="action_back">Volver</string>
+    <string name="action_close">Cerrar</string>
+    <string name="action_ok">Entendido</string>
+
+    <!-- Pantalla principal -->
+    <string name="home_title">Consulta FMI</string>
+    <string name="home_subtitle">Introduce el IMEI o el numero de serie (SN) de un dispositivo Apple.</string>
+    <string name="home_input_label">IMEI o numero de serie</string>
+    <string name="home_input_placeholder">356938035643809</string>
+    <string name="home_input_helper">Se admiten IMEI de 15 digitos y numeros de serie de Apple.</string>
+    <string name="home_detected_imei">Detectado: IMEI</string>
+    <string name="home_detected_sn">Detectado: numero de serie</string>
+    <string name="home_detected_unknown">Formato no reconocido</string>
+    <string name="home_action_query">Consultar estado</string>
+    <string name="home_action_clear">Limpiar</string>
+    <string name="home_service_selected">Servicio: %1$s</string>
+    <string name="home_no_provider_title">Proveedor sin configurar</string>
+    <string name="home_no_provider_text">Las consultas necesitan una API key de un proveedor autorizado. Configurala en Ajustes para obtener datos reales. Mientras tanto, la app no mostrara ningun dato inventado.</string>
+    <string name="home_action_configure">Configurar proveedor</string>
+    <string name="home_disclaimer">ParFMI solo consulta informacion. No desbloquea, elimina ni desactiva FMI, Activation Lock ni ninguna otra proteccion.</string>
+    <string name="home_privacy_title">Privacidad</string>
+    <string name="home_privacy_text">Los identificadores no se guardan en el dispositivo ni se envian a ningun servicio de analitica. Solo viajan al proveedor configurado por HTTPS.</string>
+
+    <!-- Validacion -->
+    <string name="validation_empty">Introduce un IMEI o un numero de serie.</string>
+    <string name="validation_imei_length">El IMEI debe tener 15 digitos (se ignoran espacios y guiones).</string>
+    <string name="validation_imei_checksum">El digito de control del IMEI no es valido. Revisa el numero.</string>
+    <string name="validation_serial_length">El numero de serie debe tener entre 8 y 20 caracteres alfanumericos.</string>
+    <string name="validation_serial_chars">El numero de serie solo admite letras y numeros.</string>
+    <string name="validation_too_long">La entrada es demasiado larga (maximo 40 caracteres).</string>
+
+    <!-- Carga -->
+    <string name="loading_title">Consultando al proveedor</string>
+    <string name="loading_detail">Consultando el servicio %1$s. Esto puede tardar unos segundos.</string>
+
+    <!-- Errores -->
+    <string name="error_title">No se pudo completar la consulta</string>
+    <string name="error_no_network">Sin conexion a Internet. Comprueba tu red e intentalo de nuevo.</string>
+    <string name="error_timeout">El proveedor tarda mas de lo esperado. Intentalo de nuevo en unos segundos.</string>
+    <string name="error_unauthorized">La API key no es valida o ha caducado. Revisala en Ajustes.</string>
+    <string name="error_insufficient_balance">El saldo de la cuenta del proveedor es insuficiente para este servicio.</string>
+    <string name="error_not_found">El proveedor no encontro informacion para el identificador indicado.</string>
+    <string name="error_rate_limited">Se han superado los limites de consultas del proveedor. Espera un momento.</string>
+    <string name="error_server">El proveedor devolvio un error interno. Intentalo mas tarde.</string>
+    <string name="error_parse">La respuesta del proveedor no tiene el formato esperado.</string>
+    <string name="error_no_provider">Configura la API key del proveedor en Ajustes antes de consultar.</string>
+    <string name="error_unknown">Ha ocurrido un error inesperado al consultar al proveedor.</string>
+    <string name="error_retry">Reintentar</string>
+
+    <!-- Resultados -->
+    <string name="result_title">Resultado de la consulta</string>
+    <string name="result_status_unknown_notice">Los estados marcados como desconocidos no significan que esten desactivados: el proveedor no devolvio ese dato.</string>
+    <string name="result_section_device">Dispositivo</string>
+    <string name="result_section_fmi">Find My iPhone</string>
+    <string name="result_section_activation">Activacion y bloqueos</string>
+    <string name="result_section_coverage">Cobertura y garantia</string>
+    <string name="result_section_network">Red y operador</string>
+    <string name="result_section_query">Datos de la consulta</string>
+    <string name="result_section_extra">Informacion adicional del proveedor</string>
+    <string name="result_action_copy">Copiar resultado</string>
+    <string name="result_action_share">Compartir resumen</string>
+    <string name="result_copied">Resultado copiado al portapapeles</string>
+    <string name="result_share_subject">ParFMI - Resultado de la consulta</string>
+    <string name="result_share_footer">Generado con ParFMI por andrespar2 - https://github.com/andrespar2</string>
+    <string name="result_not_available">No disponible</string>
+    <string name="result_raw_title">Respuesta original del proveedor</string>
+    <string name="result_raw_show">Mostrar respuesta original</string>
+    <string name="result_raw_hide">Ocultar respuesta original</string>
+
+    <!-- Estados -->
+    <string name="status_on">ON</string>
+    <string name="status_off">OFF</string>
+    <string name="status_unknown">Desconocido</string>
+    <string name="status_locked">Bloqueado</string>
+    <string name="status_unlocked">Desbloqueado</string>
+    <string name="status_activated">Activado</string>
+    <string name="status_not_activated">No activado</string>
+    <string name="status_clean">Sin bloqueo</string>
+    <string name="status_blacklisted">En lista de bloqueo</string>
+
+    <!-- Campos -->
+    <string name="field_imei">IMEI</string>
+    <string name="field_serial">Numero de serie</string>
+    <string name="field_manufacturer">Fabricante</string>
+    <string name="field_model">Modelo</string>
+    <string name="field_model_name">Nombre del modelo</string>
+    <string name="field_model_code">Identificador del modelo</string>
+    <string name="field_product_family">Familia de producto</string>
+    <string name="field_color">Color</string>
+    <string name="field_capacity">Capacidad</string>
+    <string name="field_fmi">Estado FMI</string>
+    <string name="field_activation_lock">Activation Lock</string>
+    <string name="field_activation_state">Estado de activacion</string>
+    <string name="field_coverage">Cobertura</string>
+    <string name="field_activation_date">Fecha de compra o activacion</string>
+    <string name="field_carrier">Operador</string>
+    <string name="field_simlock">Bloqueo de operador (SIM Lock)</string>
+    <string name="field_country">Pais o region</string>
+    <string name="field_blacklist">Lista de bloqueo</string>
+    <string name="field_mdm">MDM</string>
+    <string name="field_mpn">Numero de pieza (MPN)</string>
+    <string name="field_query_date">Fecha y hora de la consulta</string>
+    <string name="field_provider">Proveedor</string>
+    <string name="field_service">Servicio consultado</string>
+    <string name="field_balance">Saldo de la cuenta</string>
+    <string name="field_identifier_type">Tipo de identificador</string>
+
+    <!-- Ajustes -->
+    <string name="settings_title">Ajustes</string>
+    <string name="settings_provider_title">Proveedor de datos</string>
+    <string name="settings_provider_sickw">Sickw.com (API oficial con clave)</string>
+    <string name="settings_api_key">API key del proveedor</string>
+    <string name="settings_api_key_helper">Se guarda cifrada con el almacen de claves de Android. Nunca se sube al repositorio.</string>
+    <string name="settings_api_key_placeholder">Pega aqui tu API key</string>
+    <string name="settings_action_save">Guardar</string>
+    <string name="settings_saved">Ajustes guardados</string>
+    <string name="settings_action_clear_key">Borrar API key</string>
+    <string name="settings_key_cleared">API key borrada</string>
+    <string name="settings_key_present">API key configurada</string>
+    <string name="settings_key_absent">Sin API key configurada</string>
+    <string name="settings_service_title">Servicio a consultar</string>
+    <string name="settings_service_helper">Elige el servicio de Sickw segun la informacion que necesites. El precio es el publicado por el proveedor.</string>
+    <string name="settings_custom_service">Otro identificador de servicio</string>
+    <string name="settings_custom_service_helper">Introduce el ID numerico de un servicio de Sickw.</string>
+    <string name="settings_action_refresh_catalog">Actualizar catalogo desde Sickw</string>
+    <string name="settings_catalog_ok">Catalogo actualizado con %1$d servicios</string>
+    <string name="settings_catalog_error">No se pudo actualizar el catalogo: se mantiene el catalogo incluido en la app.</string>
+    <string name="settings_catalog_included">Catalogo incluido en la app (IDs reales de Sickw)</string>
+    <string name="settings_security_title">Seguridad y privacidad</string>
+    <string name="settings_security_text">La API key se cifra con Android Keystore (AES-GCM). Los IMEI y numeros de serie no se registran en logs ni se almacenan en el dispositivo. La app nunca envia tus datos a terceros distintos del proveedor que configures.</string>
+
+    <!-- Acerca de -->
+    <string name="about_title">Acerca de ParFMI</string>
+    <string name="about_app_name">Aplicacion: ParFMI</string>
+    <string name="about_version">Version %1$s (%2$d)</string>
+    <string name="about_description">ParFMI consulta el estado de Find My iPhone (FMI) y otros datos de seguridad de dispositivos Apple a partir de su IMEI o numero de serie. Es una herramienta de verificacion previa a la compra o de diagnostico: no modifica el dispositivo ni intenta eludir ninguna proteccion.</string>
+    <string name="about_developer_label">Desarrollado por</string>
+    <string name="about_developer">andrespar2</string>
+    <string name="about_github_label">GitHub</string>
+    <string name="about_github_url">https://github.com/andrespar2</string>
+    <string name="about_repo_label">Repositorio del proyecto</string>
+    <string name="about_repo_url">https://github.com/andrespar2/ParFMI</string>
+    <string name="about_releases_label">Descargas (Releases)</string>
+    <string name="about_credits_title">Creditos</string>
+    <string name="about_credits_text">Desarrollo, diseno y documentacion: andrespar2.\nDatos proporcionados por el proveedor de consultas configurado por el usuario.\nParFMI no esta afiliada a Apple Inc. Apple, iPhone y Find My son marcas de Apple Inc. y se mencionan solo con fines descriptivos.</string>
+    <string name="about_legal_title">Alcance y limites</string>
+    <string name="about_legal_text">ParFMI es exclusivamente de consulta. No ofrece funciones para omitir, desbloquear o desactivar FMI ni Activation Lock. Los resultados dependen por completo del proveedor configurado: si un dato no esta disponible, la app lo indica como \"No disponible\" y nunca lo inventa.</string>
+    <string name="about_action_copy_link">Copiar enlace del repositorio</string>
+    <string name="about_action_open_github">Abrir GitHub</string>
+
+    <!-- Accesibilidad -->
+    <string name="cd_copy_result">Copiar el resultado de la consulta</string>
+    <string name="cd_share_result">Compartir un resumen del resultado</string>
+    <string name="cd_clear_input">Borrar el identificador introducido</string>
+    <string name="cd_open_settings">Abrir ajustes</string>
+    <string name="cd_open_about">Abrir informacion y creditos</string>
+</resources>
