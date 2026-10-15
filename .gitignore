@@ -1,0 +1,41 @@
+# --- Gradle ---
+.gradle/
+build/
+app/build/
+!gradle/wrapper/gradle-wrapper.jar
+
+# --- Configuracion local y secretos (NUNCA subir) ---
+local.properties
+keystore.properties
+*.jks
+*.keystore
+secrets.properties
+
+# --- Android ---
+captures/
+.cxx/
+*.apk
+*.ap_
+*.aab
+*.dex
+*.class
+output.json
+release/
+*.hprof
+
+# --- IDE ---
+.idea/
+*.iml
+*.iws
+.vscode/
+.navigation/
+
+# --- Sistema operativo ---
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# --- Logs y temporales ---
+*.log
+*.tmp
+.kotlin/
