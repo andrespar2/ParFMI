@@ -15,9 +15,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
-        android:theme="@style/Theme.ParFMI"
-        tools:targetApi="34"
-        xmlns:tools="http://schemas.android.com/tools">
+        android:theme="@style/Theme.ParFMI">
 
         <activity
             android:name=".MainActivity"
