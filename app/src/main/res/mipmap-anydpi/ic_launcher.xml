@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Icono heredado para API 24-25: misma marca sobre fondo negro AMOLED. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <path
+        android:fillColor="#FF000000"
+        android:pathData="M0,0h108v108h-108z" />
+
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M45,26h18a7,7 0 0 1 7,7v42a7,7 0 0 1 -7,7h-18a7,7 0 0 1 -7,-7v-42a7,7 0 0 1 7,-7z"
+        android:strokeColor="#FFFFFFFF"
+        android:strokeWidth="4" />
+
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M51,58a9,9 0 1 0 18,0a9,9 0 1 0 -18,0z"
+        android:strokeColor="#FFFF1744"
+        android:strokeWidth="4" />
+
+    <path
+        android:pathData="M66.4,64.4L76,74"
+        android:strokeColor="#FFFF1744"
+        android:strokeLineCap="round"
+        android:strokeWidth="4.5" />
+
+    <path
+        android:fillColor="#FFFF1744"
+        android:pathData="M50,74a3,3 0 1 0 6,0a3,3 0 1 0 -6,0z" />
+</vector>
