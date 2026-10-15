@@ -30,7 +30,6 @@ internal enum class FieldTarget {
     ICLOUD,
     ACTIVATION_STATE,
     TECHNICAL_SUPPORT,
-    REPAIRS_COVERAGE,
     APPLE_CARE,
     COVERAGE,
     PURCHASE_DATE,
@@ -99,7 +98,6 @@ class SickwFieldMapper {
         var purchaseDate: String? = null
         var activationDate: String? = null
         var technicalSupport: String? = null
-        var repairsCoverage: String? = null
         var appleCare: String? = null
 
         var carrier: String? = null
@@ -128,12 +126,12 @@ class SickwFieldMapper {
                 }
 
                 FieldTarget.ICLOUD -> {
+                    // Un mismo campo puede traer "ON/OFF" (servicios de estado
+                    // FMI) o "CLEAN/LOST/ERASED" (servicios de estado iCloud).
                     val asFmi = FmiStatus.fromRaw(rawValue)
-                    if (asFmi != FmiStatus.UNKNOWN) {
-                        fmi = asFmi
-                    } else {
-                        icloudState = IcloudState.fromRaw(rawValue)
-                    }
+                    if (asFmi != FmiStatus.UNKNOWN) fmi = asFmi
+                    val asIcloud = IcloudState.fromRaw(rawValue)
+                    if (asIcloud != IcloudState.UNKNOWN) icloudState = asIcloud
                 }
 
                 FieldTarget.ACTIVATION_STATE -> {
@@ -141,8 +139,6 @@ class SickwFieldMapper {
                 }
 
                 FieldTarget.TECHNICAL_SUPPORT -> technicalSupport = technicalSupport ?: value
-
-                FieldTarget.REPAIRS_COVERAGE -> repairsCoverage = repairsCoverage ?: value
 
                 FieldTarget.APPLE_CARE -> appleCare = appleCare ?: value
 
@@ -241,7 +237,6 @@ class SickwFieldMapper {
                 purchaseDate = purchaseDate,
                 activationDate = activationDate,
                 technicalSupport = technicalSupport,
-                repairsCoverage = repairsCoverage,
                 appleCare = appleCare,
             ),
             network = NetworkInfo(
@@ -290,10 +285,11 @@ class SickwFieldMapper {
 
             text.contains("technical support") -> FieldTarget.TECHNICAL_SUPPORT
 
-            text.contains("repair") -> FieldTarget.REPAIRS_COVERAGE
-
             text.contains("apple care") || text.contains("applecare") -> FieldTarget.APPLE_CARE
 
+            // "Repairs and Service Coverage" y "Warranty Status" describen el
+            // mismo veredicto de cobertura. El historial de reparaciones
+            // ("GSX Cases & Repairs") se conserva como informacion adicional.
             text.contains("warranty") || text.contains("coverage") -> FieldTarget.COVERAGE
 
             text.contains("purchase date") || text.contains("sold date") ||
@@ -307,7 +303,8 @@ class SickwFieldMapper {
             text.contains("model name") || text.contains("model description") ->
                 FieldTarget.MODEL_NAME
 
-            text.contains("model") || text.contains("device") -> FieldTarget.MODEL
+            text.contains("model") || text.contains("device name") ||
+                text.contains("device model") || text == "device" -> FieldTarget.MODEL
 
             text.contains("product family") || text.contains("family") -> FieldTarget.PRODUCT_FAMILY
 

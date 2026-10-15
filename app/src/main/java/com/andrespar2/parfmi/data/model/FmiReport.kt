@@ -56,13 +56,11 @@ data class CoverageInfo(
     val purchaseDate: String? = null,
     val activationDate: String? = null,
     val technicalSupport: String? = null,
-    val repairsCoverage: String? = null,
     val appleCare: String? = null,
 ) {
     val hasAnyValue: Boolean
         get() = status != CoverageStatus.UNKNOWN || listOf(
-            statusText, purchaseDate, activationDate, technicalSupport,
-            repairsCoverage, appleCare,
+            statusText, purchaseDate, activationDate, technicalSupport, appleCare,
         ).any { !it.isNullOrBlank() }
 }
 
