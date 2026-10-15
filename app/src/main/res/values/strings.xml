@@ -145,6 +145,10 @@
     <string name="settings_catalog_ok">Catalogo actualizado con %1$d servicios</string>
     <string name="settings_catalog_error">No se pudo actualizar el catalogo: se mantiene el catalogo incluido en la app.</string>
     <string name="settings_catalog_included">Catalogo incluido en la app (IDs reales de Sickw)</string>
+    <string name="settings_catalog_live">Catalogo descargado desde Sickw</string>
+    <string name="settings_catalog_reset">Usar catalogo incluido en la app</string>
+    <string name="settings_show_key">Mostrar API key</string>
+    <string name="settings_hide_key">Ocultar API key</string>
     <string name="settings_security_title">Seguridad y privacidad</string>
     <string name="settings_security_text">La API key se cifra con Android Keystore (AES-GCM). Los IMEI y numeros de serie no se registran en logs ni se almacenan en el dispositivo. La app nunca envia tus datos a terceros distintos del proveedor que configures.</string>
 
